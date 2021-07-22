@@ -8,6 +8,6 @@ The zip file contains the app installer that will automatically add the app to s
 
 # Licenses
 
-Desktop icon by Icons8
+Desktop icon by [Icons8](Icons8.com/)
 
 [GetDesktopIconUnderMouse()](https://www.autohotkey.com/boards/viewtopic.php?t=61497) function by [iPhilip](https://www.autohotkey.com/boards/memberlist.php?mode=viewprofile&u=155)
