@@ -33,22 +33,12 @@ IsDesktopUnderMouse()
 		return, 0
 }
 
-HideOrShowDesktopIcons()
-{
-	ControlGet, OutputVarHwnd, Hwnd,, SysListView321, ahk_class WorkerW
-	if (OutputVarHwnd="")
-      ControlGet, OutputVarHwnd, Hwnd,, SysListView321, ahk_class Progman
-
-	if (DllCall("IsWindowVisible", UInt, OutputVarHwnd))
-	{
-		WinHide, ahk_id %OutputVarHwnd%
-		return, 0
-	}
-	else
-	{
-		WinShow, ahk_id %OutputVarHwnd%
-		return, 1
-	}
+HideOrShowDesktopIcons(Show := -1) {
+	Local hWnd	
+	If !hWnd := DllCall("GetWindow", "Ptr", WinExist("ahk_class Progman"), "UInt", 5, "Ptr")
+		hWnd := DllCall("GetWindow", "Ptr", WinExist("ahk_class WorkerW"), "UInt", 5, "Ptr")
+	If DllCall("IsWindowVisible", "Ptr", DllCall("GetWindow", "Ptr", hWnd, "UInt", 5, "Ptr")) != Show
+		DllCall("SendMessage", "Ptr", hWnd, "Ptr", 0x111, "Ptr", 0x7402, "Ptr", 0)
 }
 #If
 
