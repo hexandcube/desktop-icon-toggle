@@ -85,15 +85,18 @@ GetDesktopIconUnderMouse() {
 }
 
 DisplayAbout:
-	Gui, Add, Picture,w80 h80 Center, active.ico
-	Gui, font,bold
-	Gui, Add, Text, Center x20, Desktop Icon Toggle by Hexandcube
-	Gui, font,
-	Gui, Add, Text,, hexandcube@hexandcube.tk
-	Gui, Add, Text,, https://hexandcube.tk
-	Gui, Add, Text,, Version 1.1
-	Gui, Add, Text,, Desktop Icon by Icons8
-	Gui, Show, w300 h240 center, About
+		Gui, Add, Picture,w80 h80 Center, active.ico
+		Gui, font,bold
+		Gui, Add, Text, Center x20, Desktop Icon Toggle by Hexandcube
+		Gui, font,
+		Gui, Add, Text,, hexandcube@hexandcube.tk
+		Gui, Add, Text,, https://hexandcube.tk
+		Gui, Add, Text,, Version 1.2
+		Gui, Add, Text,, 
+		Gui, Add, Text,, Desktop Icon by Icons8
+		Gui, Add, Text,, GetDesktopIconUnderMouse function by iPhilip
+		Gui, Add, Text,, DesktopIcons function by SKAN
+		Gui, Show, w300 h310 center, About
 	return
 Return
 
