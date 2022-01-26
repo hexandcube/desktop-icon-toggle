@@ -89,9 +89,9 @@ DisplayAbout:
 		Gui, font,bold
 		Gui, Add, Text, Center x20, Desktop Icon Toggle by Hexandcube
 		Gui, font,
-		Gui, Add, Text,, hexandcube@hexandcube.tk
-		Gui, Add, Text,, https://hexandcube.tk
-		Gui, Add, Text,, Version 1.2
+		Gui, Add, Text,, hexandcube@hexandcube.eu.org
+		Gui, Add, Text,, https://hexandcube.eu.org
+		Gui, Add, Text,, Version 1.3
 		Gui, Add, Text,, 
 		Gui, Add, Text,, Desktop Icon by Icons8
 		Gui, Add, Text,, GetDesktopIconUnderMouse function by iPhilip
