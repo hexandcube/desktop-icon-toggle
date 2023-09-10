@@ -1,4 +1,4 @@
-Menu, Tray, NoStandard 
+Menu, Tray, NoStandard
 
 Menu, tray, icon, active.ico, , 1
 
@@ -8,14 +8,16 @@ Menu, Tray, Add, Pause, SuspendScript
 
 Menu, Tray, Add, Exit, EndScript
 
-Menu, Tray, Default, About 
+Menu, Tray, Default, About
+
+global shell := ComObjCreate("Shell.Application")
 
 #If IsDesktopUnderMouse()
-~LButton::
+	~LButton::
 	LButton_presses++
 	if (LButton_presses=2)
-		if (!IsObject(GetDesktopIconUnderMouse()) or DesktopIconsIsShow=0)
-			DesktopIconsIsShow:=HideOrShowDesktopIcons()
+		if (IsDesktopIconsVisible()=-1 or !IsObject(GetDesktopIconUnderMouse()))
+			HideOrShowDesktopIcons()
 	SetTimer, KeyLButton, -300
 return
 
@@ -34,7 +36,7 @@ IsDesktopUnderMouse()
 }
 
 HideOrShowDesktopIcons(Show := -1) {
-	Local hWnd	
+	Local hWnd
 	If !hWnd := DllCall("GetWindow", "Ptr", WinExist("ahk_class Progman"), "UInt", 5, "Ptr")
 		hWnd := DllCall("GetWindow", "Ptr", WinExist("ahk_class WorkerW"), "UInt", 5, "Ptr")
 	If DllCall("IsWindowVisible", "Ptr", DllCall("GetWindow", "Ptr", hWnd, "UInt", 5, "Ptr")) != Show
@@ -82,6 +84,11 @@ GetDesktopIconUnderMouse() {
 		DllCall("CloseHandle", "Ptr", hProcess)
 	}
 	return Icon
+}
+
+IsDesktopIconsVisible(){
+	isVisible := shell.GetSetting(0x00004000) ; -1 = hidden, 0 = visible
+return isVisible
 }
 
 DisplayAbout:
