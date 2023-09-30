@@ -13,3 +13,5 @@ Desktop icon by [Icons8](https://icons8.com/)
 [GetDesktopIconUnderMouse()](https://www.autohotkey.com/boards/viewtopic.php?t=61497) function by [iPhilip](https://www.autohotkey.com/boards/memberlist.php?mode=viewprofile&u=155)
 
 [DesktopIcons](https://www.autohotkey.com/boards/viewtopic.php?t=75890) function by [SKAN](https://www.autohotkey.com/boards/memberlist.php?mode=viewprofile&u=54)
+
+Special thanks to [all contributors](https://github.com/hexandcube/desktop-icon-toggle/graphs/contributors)
