@@ -74,9 +74,6 @@ GetDesktopIconUnderMouse() {
 				RegExMatch(StrSplit(list, "`n")[A_Index], "O)(.*)\t(.*)\t(.*)\t(.*)", Match)
 				Icon := {left:left, top:top, Right:Right, bottom:bottom
 					, name:Match[1], size:Match[2], type:Match[3]
-				; Delete extraneous date characters (https://goo.gl/pMw6AM):
-				; - Unicode LTR (Left-to-Right) mark (0x200E = 8206)
-				; - Unicode RTL (Right-to-Left) mark (0x200F = 8207)
 					, date:RegExReplace(Match[4], A_IsUnicode ? "[\x{200E}-\x{200F}]" : "\?")}
 				break
 			}
@@ -98,12 +95,12 @@ DisplayAbout:
 		Gui, font,
 		Gui, Add, Text,, hexandcube@hexandcube.eu.org
 		Gui, Add, Text,, https://hexandcube.eu.org
-		Gui, Add, Text,, Version 1.3
+		Gui, Add, Text,, Version 1.4
 		Gui, Add, Text,, 
 		Gui, Add, Text,, Desktop Icon by Icons8
 		Gui, Add, Text,, GetDesktopIconUnderMouse function by iPhilip
 		Gui, Add, Text,, DesktopIcons function by SKAN
-		Gui, Show, w300 h310 center, About
+		Gui, Show, w300 h320 center, About
 	return
 Return
 
